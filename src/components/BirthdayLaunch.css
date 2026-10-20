@@ -1,0 +1,1425 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   MAIN SCREEN
+===================================================== */
+
+.birthday-launch {
+
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  font-family:
+    "Segoe UI",
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  color: #1e293b;
+
+}
+
+
+/* =====================================================
+   COUNTDOWN BACKGROUND
+===================================================== */
+
+.countdown-screen {
+
+  background:
+
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 220, 230, 0.55),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(255, 238, 180, 0.55),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(219, 234, 254, 0.65),
+      transparent 40%
+    ),
+
+    #fffdf9;
+
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.main-container {
+
+  width: min(900px, 92vw);
+
+  max-height: 96vh;
+
+  position: relative;
+
+  z-index: 10;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.main-logo {
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 8px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #174a9c,
+      #2563eb
+    );
+
+  color: white;
+
+  font-size: 30px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 12px 30px
+    rgba(37, 99, 235, 0.22);
+
+  animation:
+    logoFloat 3s ease-in-out infinite;
+
+}
+
+
+/* =====================================================
+   TOP TEXT
+===================================================== */
+
+.welcome-text {
+
+  margin: 0 0 5px;
+
+  color: #64748b;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.main-title {
+
+  margin: 0;
+
+  color: #111827;
+
+  font-size:
+    clamp(28px, 4.5vw, 45px);
+
+  font-weight: 900;
+
+  letter-spacing: -1.5px;
+
+}
+
+
+.main-subtitle {
+
+  margin: 3px 0 0;
+
+  color: #2563eb;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+}
+
+
+/* =====================================================
+   BIRTHDAY CARD
+===================================================== */
+
+.birthday-card {
+
+  width: min(700px, 100%);
+
+  margin-top: 17px;
+
+  padding: 20px 25px;
+
+  background:
+    rgba(255, 255, 255, 0.94);
+
+  border:
+    1px solid rgba(226, 232, 240, 0.9);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 20px 55px
+    rgba(15, 23, 42, 0.09);
+
+  backdrop-filter: blur(10px);
+
+}
+
+
+/* =====================================================
+   CAKE
+===================================================== */
+
+.cake {
+
+  font-size: 34px;
+
+  margin-bottom: 2px;
+
+  animation:
+    cakeFloat 2s ease-in-out infinite;
+
+}
+
+
+/* =====================================================
+   BIRTHDAY LABEL
+===================================================== */
+
+.birthday-label {
+
+  margin: 0;
+
+  color: #d97706;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+
+}
+
+
+/* =====================================================
+   OWNER NAME
+===================================================== */
+
+.birthday-card h2 {
+
+  margin: 5px 0;
+
+  color: #111827;
+
+  font-size: 25px;
+
+  font-weight: 900;
+
+}
+
+
+.card-description {
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.divider {
+
+  width: 50px;
+  height: 2px;
+
+  margin: 13px auto;
+
+  border-radius: 10px;
+
+  background: #f59e0b;
+
+}
+
+
+/* =====================================================
+   LAUNCH LABEL
+===================================================== */
+
+.launch-label {
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 2.5px;
+
+}
+
+
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+
+.countdown {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 12px;
+
+}
+
+
+.time-box {
+
+  width: 115px;
+
+  padding: 12px 8px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f8fafc,
+      #eef4ff
+    );
+
+  border:
+    1px solid #dbe5f1;
+
+  border-radius: 13px;
+
+  box-shadow:
+    0 7px 18px
+    rgba(15, 23, 42, 0.05);
+
+}
+
+
+.time-box span {
+
+  display: block;
+
+  color: #123f88;
+
+  font-size: 36px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  font-variant-numeric:
+    tabular-nums;
+
+}
+
+
+.time-box small {
+
+  display: block;
+
+  margin-top: 5px;
+
+  color: #64748b;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+}
+
+
+.separator {
+
+  color: #94a3b8;
+
+  font-size: 25px;
+
+  font-weight: 800;
+
+}
+
+
+/* =====================================================
+   TEST BADGE
+===================================================== */
+
+.test-badge {
+
+  display: inline-block;
+
+  margin-top: 13px;
+
+  padding: 5px 11px;
+
+  border-radius: 50px;
+
+  background: #f1f5f9;
+
+  color: #64748b;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+}
+
+
+/* =====================================================
+   BOTTOM MESSAGE
+===================================================== */
+
+.bottom-message {
+
+  margin: 12px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+
+}
+
+
+/* =====================================================
+   CELEBRATION LAYER
+===================================================== */
+
+.celebration-layer {
+
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 2;
+
+}
+
+
+.falling-item {
+
+  position: absolute;
+
+  top: -50px;
+
+  font-size: 22px;
+
+  opacity: 0.75;
+
+  animation-name: falling;
+
+  animation-timing-function: linear;
+
+  animation-iteration-count: infinite;
+
+}
+
+
+/* =====================================================
+   BALLOONS
+===================================================== */
+
+.balloon {
+
+  position: absolute;
+
+  z-index: 3;
+
+  font-size: 60px;
+
+  animation:
+    balloonFloat 4s ease-in-out infinite;
+
+  opacity: 0.75;
+
+}
+
+
+.balloon-one {
+
+  left: 4%;
+
+  top: 15%;
+
+}
+
+
+.balloon-two {
+
+  right: 5%;
+
+  top: 18%;
+
+  animation-delay: 1s;
+
+}
+
+
+.balloon-three {
+
+  left: 10%;
+
+  bottom: 8%;
+
+  animation-delay: 2s;
+
+}
+
+
+.balloon-four {
+
+  right: 10%;
+
+  bottom: 10%;
+
+  animation-delay: 1.5s;
+
+}
+
+
+/* =====================================================
+   BACKGROUND CIRCLES
+===================================================== */
+
+.background-circle {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: 1;
+
+}
+
+
+.circle-one {
+
+  width: 400px;
+  height: 400px;
+
+  left: -180px;
+  top: -200px;
+
+  background:
+    rgba(244, 114, 182, 0.07);
+
+}
+
+
+.circle-two {
+
+  width: 450px;
+  height: 450px;
+
+  right: -200px;
+  bottom: -220px;
+
+  background:
+    rgba(250, 204, 21, 0.08);
+
+}
+
+
+/* =====================================================
+   LAUNCH SCREEN
+===================================================== */
+
+.launch-screen {
+
+  background:
+
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(255, 225, 230, 0.75),
+      transparent 35%
+    ),
+
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(219, 234, 254, 0.6),
+      transparent 30%
+    ),
+
+    #fffdf9;
+
+  animation:
+    launchAppear 1s ease;
+
+}
+
+
+/* =====================================================
+   GLOW
+===================================================== */
+
+.glow {
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  opacity: 0.3;
+
+}
+
+
+.glow-one {
+
+  left: -100px;
+  top: -100px;
+
+  background: #fbcfe8;
+
+}
+
+
+.glow-two {
+
+  right: -100px;
+  bottom: -100px;
+
+  background: #fde68a;
+
+}
+
+
+/* =====================================================
+   LAUNCH CONTENT
+===================================================== */
+
+.launch-content {
+
+  width: min(850px, 90vw);
+
+  position: relative;
+
+  z-index: 10;
+
+  text-align: center;
+
+}
+
+
+/* =====================================================
+   BIG CELEBRATION
+===================================================== */
+
+.big-celebration {
+
+  font-size: 65px;
+
+  margin-bottom: 3px;
+
+  animation:
+    celebrationPop 1s ease,
+    celebrationFloat 2s ease-in-out infinite;
+
+}
+
+
+/* =====================================================
+   LAUNCH SMALL TEXT
+===================================================== */
+
+.launch-small-text {
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 3px;
+
+}
+
+
+/* =====================================================
+   LAUNCH TITLE
+===================================================== */
+
+.launch-screen h1 {
+
+  margin: 5px 0 0;
+
+  color: #111827;
+
+  font-size:
+    clamp(38px, 6vw, 58px);
+
+  line-height: 1.05;
+
+  font-weight: 950;
+
+  letter-spacing: -2px;
+
+}
+
+
+.gold-line {
+
+  width: 70px;
+  height: 3px;
+
+  margin: 13px auto;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #f59e0b,
+      #fbbf24
+    );
+
+}
+
+
+.launch-screen h2 {
+
+  margin: 0;
+
+  color: #2563eb;
+
+  font-size: 29px;
+
+  font-weight: 900;
+
+}
+
+
+.gift-text {
+
+  margin: 5px 0 17px;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+}
+
+
+/* =====================================================
+   BIRTHDAY MESSAGE CARD
+===================================================== */
+
+.birthday-message {
+
+  width: min(600px, 100%);
+
+  margin: 0 auto;
+
+  padding: 17px 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  background:
+    rgba(255, 255, 255, 0.95);
+
+  border:
+    1px solid #e2e8f0;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 20px 50px
+    rgba(15, 23, 42, 0.08);
+
+}
+
+
+.birthday-message > span {
+
+  font-size: 31px;
+
+}
+
+
+.birthday-message div {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+
+}
+
+
+.birthday-message strong {
+
+  color: #111827;
+
+  font-size: 19px;
+
+}
+
+
+.birthday-message small {
+
+  color: #2563eb;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+}
+
+
+/* =====================================================
+   LIVE BADGE
+===================================================== */
+
+.live-badge {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 15px;
+
+  padding: 7px 13px;
+
+  border-radius: 50px;
+
+  background: #ecfdf5;
+
+  border:
+    1px solid #bbf7d0;
+
+  color: #15803d;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+}
+
+
+.live-dot {
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  animation:
+    pulse 1.2s infinite;
+
+}
+
+
+/* =====================================================
+   ENTER BUTTON
+===================================================== */
+
+.enter-button {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 13px;
+
+  margin: 17px auto 0;
+
+  padding: 13px 29px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #123f88,
+      #2563eb
+    );
+
+  color: white;
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.7px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 25px
+    rgba(37, 99, 235, 0.25);
+
+  transition:
+    all 0.25s ease;
+
+}
+
+
+.enter-button span {
+
+  font-size: 19px;
+
+}
+
+
+.enter-button:hover {
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 17px 30px
+    rgba(37, 99, 235, 0.3);
+
+}
+
+
+.enter-button:hover span:last-child {
+
+  transform:
+    translateX(5px);
+
+}
+
+
+.enter-help {
+
+  margin-top: 7px;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes falling {
+
+  0% {
+
+    transform:
+      translateY(-60px)
+      rotate(0deg);
+
+    opacity: 0;
+
+  }
+
+  10% {
+
+    opacity: 0.8;
+
+  }
+
+  100% {
+
+    transform:
+      translateY(110vh)
+      rotate(360deg);
+
+    opacity: 0;
+
+  }
+
+}
+
+
+@keyframes balloonFloat {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0)
+      rotate(-4deg);
+
+  }
+
+  50% {
+
+    transform:
+      translateY(-25px)
+      rotate(4deg);
+
+  }
+
+}
+
+
+@keyframes logoFloat {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0);
+
+  }
+
+  50% {
+
+    transform:
+      translateY(-5px);
+
+  }
+
+}
+
+
+@keyframes cakeFloat {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0);
+
+  }
+
+  50% {
+
+    transform:
+      translateY(-7px);
+
+  }
+
+}
+
+
+@keyframes celebrationPop {
+
+  0% {
+
+    transform:
+      scale(0);
+
+    opacity: 0;
+
+  }
+
+  65% {
+
+    transform:
+      scale(1.2);
+
+  }
+
+  100% {
+
+    transform:
+      scale(1);
+
+    opacity: 1;
+
+  }
+
+}
+
+
+@keyframes celebrationFloat {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0);
+
+  }
+
+  50% {
+
+    transform:
+      translateY(-10px);
+
+  }
+
+}
+
+
+@keyframes pulse {
+
+  0% {
+
+    transform:
+      scale(1);
+
+    opacity: 1;
+
+  }
+
+  50% {
+
+    transform:
+      scale(1.5);
+
+    opacity: 0.5;
+
+  }
+
+  100% {
+
+    transform:
+      scale(1);
+
+    opacity: 1;
+
+  }
+
+}
+
+
+@keyframes launchAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      scale(0.96);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      scale(1);
+
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .main-container {
+
+    width: 94vw;
+
+  }
+
+
+  .main-logo {
+
+    width: 50px;
+    height: 50px;
+
+    font-size: 26px;
+
+    margin-bottom: 5px;
+
+  }
+
+
+  .welcome-text {
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+  }
+
+
+  .main-title {
+
+    font-size: 27px;
+
+  }
+
+
+  .main-subtitle {
+
+    font-size: 13px;
+
+  }
+
+
+  .birthday-card {
+
+    margin-top: 13px;
+
+    padding: 17px 12px;
+
+    border-radius: 18px;
+
+  }
+
+
+  .cake {
+
+    font-size: 29px;
+
+  }
+
+
+  .birthday-label {
+
+    font-size: 9px;
+
+  }
+
+
+  .birthday-card h2 {
+
+    font-size: 22px;
+
+  }
+
+
+  .card-description {
+
+    font-size: 11px;
+
+  }
+
+
+  .divider {
+
+    margin: 10px auto;
+
+  }
+
+
+  .launch-label {
+
+    font-size: 8px;
+
+  }
+
+
+  .countdown {
+
+    gap: 5px;
+
+  }
+
+
+  .time-box {
+
+    width: 95px;
+
+    padding: 11px 5px;
+
+  }
+
+
+  .time-box span {
+
+    font-size: 29px;
+
+  }
+
+
+  .time-box small {
+
+    font-size: 7px;
+
+  }
+
+
+  .separator {
+
+    font-size: 19px;
+
+  }
+
+
+  .bottom-message {
+
+    font-size: 9px;
+
+    margin-top: 8px;
+
+  }
+
+
+  .balloon {
+
+    font-size: 40px;
+
+  }
+
+
+  .launch-screen h1 {
+
+    font-size: 37px;
+
+  }
+
+
+  .launch-screen h2 {
+
+    font-size: 24px;
+
+  }
+
+
+  .big-celebration {
+
+    font-size: 52px;
+
+  }
+
+
+  .launch-small-text {
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+  }
+
+
+  .birthday-message {
+
+    padding: 13px 15px;
+
+    gap: 10px;
+
+  }
+
+
+  .birthday-message > span {
+
+    font-size: 25px;
+
+  }
+
+
+  .birthday-message strong {
+
+    font-size: 16px;
+
+  }
+
+
+  .birthday-message small {
+
+    font-size: 10px;
+
+  }
+
+
+  .enter-button {
+
+    margin-top: 14px;
+
+    padding: 12px 25px;
+
+  }
+
+}
